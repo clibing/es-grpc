@@ -1,0 +1,15 @@
+name: "envoy"
+
+services:
+  envoy:
+    # image: hub.linuxcrypt.cn/envoyproxy/envoy:v1.31.0
+    image: envoyproxy/envoy:v1.21.6
+    ports:
+      - 9901:9901
+      - 51051:51051
+      - 51052:51052
+    volumes:
+      - ./envoy:/envoy
+      - ./user_service.pb:/protos/user_service.pb
+    command: sh -c "/usr/local/bin/envoy --config-path /envoy/config.yaml -l debug"
+

@@ -1,0 +1,1 @@
+https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto

@@ -2,12 +2,17 @@ syntax = "proto3";
 
 option java_multiple_files = true;
 option java_package = "com.clibing.user.service";
-option java_outer_classname = "UserServiceProto";
-option objc_class_prefix = "User";
+
+package user;
+
+import "google/api/annotations.proto";
 
 service UserService {
   rpc login(LoginRequest)returns(LoginResponse){
-
+    option (google.api.http) = {
+      post: "/api/v1/login",
+      body: "*"
+    };
   }
 }
 message LoginRequest {

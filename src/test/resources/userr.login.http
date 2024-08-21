@@ -1,0 +1,9 @@
+### user login.
+POST http://127.0.0.1:51051/api/v1/login
+Content-Type: application/json
+
+{
+  "user": "admin",
+  "password": "123456"
+}
+###
